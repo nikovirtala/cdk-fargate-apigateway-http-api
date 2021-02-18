@@ -77,6 +77,7 @@ export class HonkStack extends Stack {
     // Create ECS cluster
     const cluster = new Cluster(this, 'HonkCluster', {
       vpc: vpc,
+      capacityProviders: ['FARGATE', 'FARGATE_SPOT'],
     });
 
     // Declare the ECS Task; one small container, built locally
@@ -104,6 +105,16 @@ export class HonkStack extends Stack {
     // Create the ECS service and register it to Service Discovery (Cloud Map)
     const service = new FargateService(this, 'HonkService', {
       cluster: cluster,
+      capacityProviderStrategies: [
+        {
+          capacityProvider: 'FARGATE_SPOT',
+          weight: 1,
+        },
+        {
+          capacityProvider: 'FARGATE',
+          weight: 0,
+        },
+      ],
       vpcSubnets: { subnetType: SubnetType.ISOLATED },
       securityGroups: [serviceSecurityGroup],
       platformVersion: FargatePlatformVersion.VERSION1_4,

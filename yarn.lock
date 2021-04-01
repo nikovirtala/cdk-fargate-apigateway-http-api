@@ -3,14 +3,14 @@
 
 
 "@aws-cdk/assert@^1.95.1":
-  version "1.95.1"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/assert/-/assert-1.95.1.tgz#15e801e41705a3eb15abdbaa3bdab86e302e9861"
-  integrity sha512-lnW0xs8SXCF+r1sVWcBxhgMEVNP/s0Bhp8WJSlaBC823RGknZ9zSuehtZrTMdjh8AncDa3klvwdCvp/za1WQ2A==
+  version "1.95.2"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/assert/-/assert-1.95.2.tgz#54593bf011ad3e05ecc6bacb70203a42a1f491fb"
+  integrity sha512-1/RhPYYKuyPYViXk6oWy9uVsULlKLgP1ZHPxyghWttQaFDNRzFmBPLYPlFijTMH3/X2iIMbBwynGlrYMJxiJrA==
   dependencies:
-    "@aws-cdk/cloud-assembly-schema" "1.95.1"
-    "@aws-cdk/cloudformation-diff" "1.95.1"
-    "@aws-cdk/core" "1.95.1"
-    "@aws-cdk/cx-api" "1.95.1"
+    "@aws-cdk/cloud-assembly-schema" "1.95.2"
+    "@aws-cdk/cloudformation-diff" "1.95.2"
+    "@aws-cdk/core" "1.95.2"
+    "@aws-cdk/cx-api" "1.95.2"
     constructs "^3.3.69"
 
 "@aws-cdk/assets@1.95.1":
@@ -588,7 +588,7 @@
     ignore "^5.1.8"
     minimatch "^3.0.4"
 
-"@aws-cdk/core@^1.95.1":
+"@aws-cdk/core@1.95.2", "@aws-cdk/core@^1.95.1":
   version "1.95.2"
   resolved "https://registry.yarnpkg.com/@aws-cdk/core/-/core-1.95.2.tgz#07e37135b7578a67fb6c7a221f1512f96d428713"
   integrity sha512-9J6UmN14E2iH5pRMNv03Yc5wTVedJqdU15aDIqnO8DZM+ZBjZOZFcl0imfPGTCd244un6SzLDaRFh/rQw5gomQ==

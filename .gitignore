@@ -12,6 +12,8 @@
 .nyc_output
 .parcel-cache/
 .yarn-integrity
+/.changelog.tmp.md
+/.version.tmp.json
 /dist
 /lib
 build/Release
@@ -43,4 +45,3 @@ yarn-error.log*
 !/test
 !/tsconfig.eslint.json
 !/tsconfig.json
-!version.json

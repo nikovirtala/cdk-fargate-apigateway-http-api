@@ -1,7 +1,7 @@
 const { AwsCdkTypeScriptApp } = require('projen');
 
 const project = new AwsCdkTypeScriptApp({
-  cdkVersion: '1.102.0',
+  cdkVersion: '1.103.0',
   name: 'cdk-fargate-apigateway-http-api',
   cdkDependencies: [
     '@aws-cdk/aws-ec2',

@@ -31,8 +31,8 @@ yarn-debug.log*
 yarn-error.log*
 !/.eslintrc.json
 !/.gitattributes
-!/.github/dependabot.yml
 !/.github/workflows/build.yml
+!/.github/workflows/upgrade-dependencies.yml
 !/.mergify.yml
 !/.npmignore
 !/.projen/deps.json

@@ -15,7 +15,7 @@
     },
     {
       "name": "aws-cdk",
-      "version": "^1.103.0",
+      "version": "^1.105.0",
       "type": "build"
     },
     {
@@ -39,8 +39,18 @@
       "type": "build"
     },
     {
+      "name": "npm-check-updates",
+      "version": "^11",
+      "type": "build"
+    },
+    {
+      "name": "npm-check-updates",
+      "version": "^11",
+      "type": "build"
+    },
+    {
       "name": "projen",
-      "version": "^0.17.89",
+      "version": "^0.18.5",
       "type": "build"
     },
     {
@@ -58,37 +68,37 @@
     },
     {
       "name": "@aws-cdk/assert",
-      "version": "^1.103.0",
+      "version": "^1.105.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-apigatewayv2-integrations",
-      "version": "^1.103.0",
+      "version": "^1.105.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-apigatewayv2",
-      "version": "^1.103.0",
+      "version": "^1.105.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-ec2",
-      "version": "^1.103.0",
+      "version": "^1.105.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-ecs",
-      "version": "^1.103.0",
+      "version": "^1.105.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-servicediscovery",
-      "version": "^1.103.0",
+      "version": "^1.105.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "^1.103.0",
+      "version": "^1.105.0",
       "type": "runtime"
     }
   ],

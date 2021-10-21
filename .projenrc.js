@@ -1,7 +1,7 @@
 const { AwsCdkTypeScriptApp } = require('projen');
 
 const project = new AwsCdkTypeScriptApp({
-  cdkVersion: '1.105.0',
+  cdkVersion: '1.128.0',
   name: 'cdk-fargate-apigateway-http-api',
   cdkDependencies: [
     '@aws-cdk/aws-ec2',
@@ -20,6 +20,21 @@ const project = new AwsCdkTypeScriptApp({
   codeCov: false,
   defaultReleaseBranch: 'main',
   dependabot: false,
+  depsUpgradeOptions: {
+    ignoreProjen: false,
+    workflowOptions: {
+      labels: ['auto-approve', 'auto-merge'],
+      secret: 'AUTOMATION_TOKEN',
+    },
+  },
+  autoApproveOptions: {
+    secret: 'GITHUB_TOKEN',
+    allowedUsernames: ['nikovirtala'],
+  },
+  eslint: true,
+  eslintOptions: {
+    prettier: true,
+  },
   jest: false,
   mergify: true,
   pullRequestTemplate: false,

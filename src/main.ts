@@ -1,5 +1,5 @@
-import { VpcLink, HttpApi } from '@aws-cdk/aws-apigatewayv2';
-import { HttpServiceDiscoveryIntegration } from '@aws-cdk/aws-apigatewayv2-integrations';
+import { VpcLink, HttpApi } from '@aws-cdk/aws-apigatewayv2-alpha';
+import { HttpServiceDiscoveryIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
 import {
   InterfaceVpcEndpointAwsService,
   Vpc,
@@ -8,16 +8,17 @@ import {
   SecurityGroup,
   Peer,
   Port,
-} from '@aws-cdk/aws-ec2';
+} from 'aws-cdk-lib/aws-ec2';
 import {
   Cluster,
   FargateTaskDefinition,
   ContainerImage,
   FargateService,
   FargatePlatformVersion,
-} from '@aws-cdk/aws-ecs';
-import { PrivateDnsNamespace, DnsRecordType } from '@aws-cdk/aws-servicediscovery';
-import { App, Construct, Stack, StackProps, CfnOutput } from '@aws-cdk/core';
+} from 'aws-cdk-lib/aws-ecs';
+import { PrivateDnsNamespace, DnsRecordType } from 'aws-cdk-lib/aws-servicediscovery';
+import { App, Stack, StackProps, CfnOutput } from 'aws-cdk-lib/core';
+import { Construct } from 'constructs';
 
 export class HonkStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps = {}) {
@@ -28,7 +29,7 @@ export class HonkStack extends Stack {
       cidr: '10.0.0.0/16',
       enableDnsSupport: true,
       maxAzs: 1,
-      subnetConfiguration: [{ cidrMask: 24, name: 'isolated', subnetType: SubnetType.ISOLATED }],
+      subnetConfiguration: [{ cidrMask: 24, name: 'isolated', subnetType: SubnetType.PRIVATE_ISOLATED }],
     });
 
     // Configure VPC for required services
@@ -65,7 +66,7 @@ export class HonkStack extends Stack {
     // Create API Gateway VPC Link to get the service connected to VPC
     const vpcLink = new VpcLink(this, 'HonkVpcLink', {
       vpc: vpc,
-      subnets: { subnetType: SubnetType.ISOLATED },
+      subnets: { subnetType: SubnetType.PRIVATE_ISOLATED },
     });
 
     // Create Service Discovery (Cloud Map) namespace
@@ -77,7 +78,7 @@ export class HonkStack extends Stack {
     // Create ECS cluster
     const cluster = new Cluster(this, 'HonkCluster', {
       vpc: vpc,
-      capacityProviders: ['FARGATE', 'FARGATE_SPOT'],
+      enableFargateCapacityProviders: true,
     });
 
     // Declare the ECS Task; one small container, built locally
@@ -115,7 +116,7 @@ export class HonkStack extends Stack {
           weight: 0,
         },
       ],
-      vpcSubnets: { subnetType: SubnetType.ISOLATED },
+      vpcSubnets: { subnetType: SubnetType.PRIVATE_ISOLATED },
       securityGroups: [serviceSecurityGroup],
       platformVersion: FargatePlatformVersion.VERSION1_4,
       taskDefinition: taskDefinition,

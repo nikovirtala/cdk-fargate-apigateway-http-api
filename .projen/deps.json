@@ -17,7 +17,7 @@
     },
     {
       "name": "aws-cdk",
-      "version": "^1.128.0",
+      "version": "^2.0.0",
       "type": "build"
     },
     {
@@ -73,37 +73,27 @@
     },
     {
       "name": "@aws-cdk/assert",
-      "version": "^1.128.0",
+      "version": "^2.0.0",
       "type": "runtime"
     },
     {
-      "name": "@aws-cdk/aws-apigatewayv2-integrations",
-      "version": "^1.128.0",
+      "name": "@aws-cdk/aws-apigatewayv2-alpha",
+      "version": "2.0.0-alpha.11",
       "type": "runtime"
     },
     {
-      "name": "@aws-cdk/aws-apigatewayv2",
-      "version": "^1.128.0",
+      "name": "@aws-cdk/aws-apigatewayv2-integrations-alpha",
+      "version": "2.0.0-alpha.11",
       "type": "runtime"
     },
     {
-      "name": "@aws-cdk/aws-ec2",
-      "version": "^1.128.0",
+      "name": "aws-cdk-lib",
+      "version": "^2.0.0",
       "type": "runtime"
     },
     {
-      "name": "@aws-cdk/aws-ecs",
-      "version": "^1.128.0",
-      "type": "runtime"
-    },
-    {
-      "name": "@aws-cdk/aws-servicediscovery",
-      "version": "^1.128.0",
-      "type": "runtime"
-    },
-    {
-      "name": "@aws-cdk/core",
-      "version": "^1.128.0",
+      "name": "constructs",
+      "version": "^10.0.5",
       "type": "runtime"
     }
   ],

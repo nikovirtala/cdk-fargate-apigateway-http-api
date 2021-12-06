@@ -1,6 +1,6 @@
-const { AwsCdkTypeScriptApp } = require('projen');
+const { awscdk } = require('projen');
 
-const project = new AwsCdkTypeScriptApp({
+const project = new awscdk.AwsCdkTypeScriptApp({
   cdkVersion: '2.0.0',
   name: 'cdk-fargate-apigateway-http-api',
   context: { '@aws-cdk/core:newStyleStackSynthesis': true },

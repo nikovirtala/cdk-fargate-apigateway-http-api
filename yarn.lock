@@ -861,12 +861,11 @@ cli-color@~0.1.6:
     es5-ext "0.8.x"
 
 cli-table@^0.3.6:
-  version "0.3.9"
-  resolved "https://registry.yarnpkg.com/cli-table/-/cli-table-0.3.9.tgz#c0570b079296608a31761a67d9af9841dbee8300"
-  integrity sha512-7eA6hFtAZwVx3dWAGoaBqTrzWko5jRUFKpHT64ZHkJpaA3y5wf5NlLjguqTRmqycatJZiwftODYYyGNLbQ7MuA==
+  version "0.3.10"
+  resolved "https://registry.yarnpkg.com/cli-table/-/cli-table-0.3.10.tgz#2929b8ad5671097d79b373c8aab4a52c03a77119"
+  integrity sha512-xBb4vPd0SyDRWf4aSnyXvAcICMuBgJjrrVg7qyyMo5NC6t5cju8c+FwiuBWyCE68ebqD9WtjyHOS8RNEJ5LbGA==
   dependencies:
     colors "1.0.3"
-    strip-ansi "^6.0.1"
 
 cliui@^7.0.2:
   version "7.0.4"
@@ -956,9 +955,9 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   integrity sha1-PXz0Rk22RG6mRL9LOVB/mFEAjo4=
 
 constructs@^10.0.5:
-  version "10.0.9"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.0.9.tgz#fe724185e4288001850914e95cce2b32d848355f"
-  integrity sha512-C9la/fcnCKe3XIjKPbWuD49mnOYqSWdiMI6TNJmF0ao3pJw6Hap03Q4nsmCxpWMXuMzM546Kw/WnW7ElB3g4OA==
+  version "10.0.10"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.0.10.tgz#ab0dfcecfb7f10419c512cd3f5b809ef034882cc"
+  integrity sha512-lQqY39wuQksXfm63rxcplif8CpW7ZuGWqQNGG/qoxfVeBjG4DWpCzD3K3pVukRCe+EhvsIvLpZxfL6SKLAfvlw==
 
 conventional-changelog-config-spec@^2.1.0:
   version "2.1.0"
@@ -2835,9 +2834,9 @@ object-assign@^4.1.0:
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
 
 object-inspect@^1.11.0, object-inspect@^1.9.0:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.11.0.tgz#9dceb146cedd4148a0d9e51ab88d34cf509922b1"
-  integrity sha512-jp7ikS6Sd3GxQfZJPyH3cjcbJF6GZPClgdV+EFygjFLQ5FmW/dRUnTd9PQ9k0JhoNDabWFbpF1yCdSWCC6gexg==
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.11.1.tgz#d4bd7d7de54b9a75599f59a00bd698c1f1c6549b"
+  integrity sha512-If7BjFlpkzzBeV1cqgT3OSWT3azyoxDGajR+iGnFBfVV2EWyDyWaZZW2ERDjUaY2QM8i5jI3Sj7mhsM4DDAqWA==
 
 object-keys@^1.0.12, object-keys@^1.1.1:
   version "1.1.1"
@@ -3118,10 +3117,10 @@ progress@^2.0.0, progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.36.7:
-  version "0.36.7"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.36.7.tgz#a45afa27d7afa664bb6a0c5da6abaddef9279ec8"
-  integrity sha512-/8zhLtdO80JsYVjrpdnXSR4K1b6timx3yCgvuVZhVSSItqXWh1y1P/KnCtq+plLrah4or0ZLFLABYxAECVGG5Q==
+projen@^0.37.1:
+  version "0.37.1"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.37.1.tgz#06f06a4aab185a128bc9b6b1e4005cde67a8528b"
+  integrity sha512-wP4XQdj2apaf1MrHF3iIYBHDZiNZJEfdfNTlgv6zx4xi5k76v7qknWXwzjXnfsUavUc17NmQ0eEIEsZzM2O3aw==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"

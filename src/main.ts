@@ -1,110 +1,96 @@
-import { VpcLink, HttpApi } from '@aws-cdk/aws-apigatewayv2-alpha';
-import { HttpServiceDiscoveryIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
-import { App, Stack, StackProps, CfnOutput } from 'aws-cdk-lib';
-import {
-  InterfaceVpcEndpointAwsService,
-  Vpc,
-  SubnetType,
-  GatewayVpcEndpointAwsService,
-  SecurityGroup,
-  Peer,
-  Port,
-} from 'aws-cdk-lib/aws-ec2';
-import {
-  Cluster,
-  FargateTaskDefinition,
-  ContainerImage,
-  FargateService,
-  FargatePlatformVersion,
-} from 'aws-cdk-lib/aws-ecs';
-import { PrivateDnsNamespace, DnsRecordType } from 'aws-cdk-lib/aws-servicediscovery';
+import * as apigatewayv2 from '@aws-cdk/aws-apigatewayv2-alpha';
+import * as apigatewayv2_integrations from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
+import * as cdk from 'aws-cdk-lib';
+import * as ec2 from 'aws-cdk-lib/aws-ec2';
+import * as ecs from 'aws-cdk-lib/aws-ecs';
+import * as servicediscovery from 'aws-cdk-lib/aws-servicediscovery';
 import { Construct } from 'constructs';
 
-export class HonkStack extends Stack {
-  constructor(scope: Construct, id: string, props: StackProps = {}) {
+export class HonkStack extends cdk.Stack {
+  constructor(scope: Construct, id: string, props: cdk.StackProps = {}) {
     super(scope, id, props);
 
     // Create VPC with isolated (no routing to internet) subnets
-    const vpc = new Vpc(this, 'HonkVpc', {
+    const vpc = new ec2.Vpc(this, 'HonkVpc', {
       cidr: '10.0.0.0/16',
       enableDnsSupport: true,
       maxAzs: 1,
-      subnetConfiguration: [{ cidrMask: 24, name: 'isolated', subnetType: SubnetType.PRIVATE_ISOLATED }],
+      subnetConfiguration: [{ cidrMask: 24, name: 'isolated', subnetType: ec2.SubnetType.PRIVATE_ISOLATED }],
     });
 
     // Configure VPC for required services
 
     // ECR images are stored in s3, and thus s3 is needed
     vpc.addGatewayEndpoint('S3Endpoint', {
-      service: GatewayVpcEndpointAwsService.S3,
+      service: ec2.GatewayVpcEndpointAwsService.S3,
     });
 
     vpc.addInterfaceEndpoint('EcrEndpoint', {
-      service: InterfaceVpcEndpointAwsService.ECR,
+      service: ec2.InterfaceVpcEndpointAwsService.ECR,
       privateDnsEnabled: true,
       open: true,
     });
 
     vpc.addInterfaceEndpoint('EcrDockerEndpoint', {
-      service: InterfaceVpcEndpointAwsService.ECR_DOCKER,
+      service: ec2.InterfaceVpcEndpointAwsService.ECR_DOCKER,
       privateDnsEnabled: true,
       open: true,
     });
 
     vpc.addInterfaceEndpoint('LogsEndpoint', {
-      service: InterfaceVpcEndpointAwsService.CLOUDWATCH_LOGS,
+      service: ec2.InterfaceVpcEndpointAwsService.CLOUDWATCH_LOGS,
       privateDnsEnabled: true,
       open: true,
     });
 
     vpc.addInterfaceEndpoint('ApiGatewayEndpoint', {
-      service: InterfaceVpcEndpointAwsService.APIGATEWAY,
+      service: ec2.InterfaceVpcEndpointAwsService.APIGATEWAY,
       privateDnsEnabled: true,
       open: true,
     });
 
     // Create API Gateway VPC Link to get the service connected to VPC
-    const vpcLink = new VpcLink(this, 'HonkVpcLink', {
+    const vpcLink = new apigatewayv2.VpcLink(this, 'HonkVpcLink', {
       vpc: vpc,
-      subnets: { subnetType: SubnetType.PRIVATE_ISOLATED },
+      subnets: { subnetType: ec2.SubnetType.PRIVATE_ISOLATED },
     });
 
     // Create Service Discovery (Cloud Map) namespace
-    const dnsNamespace = new PrivateDnsNamespace(this, 'HonkDnsNamespace', {
+    const dnsNamespace = new servicediscovery.PrivateDnsNamespace(this, 'HonkDnsNamespace', {
       name: 'honk.local',
       vpc: vpc,
     });
 
     // Create ECS cluster
-    const cluster = new Cluster(this, 'HonkCluster', {
+    const cluster = new ecs.Cluster(this, 'HonkCluster', {
       vpc: vpc,
       enableFargateCapacityProviders: true,
     });
 
     // Declare the ECS Task; one small container, built locally
-    const taskDefinition = new FargateTaskDefinition(this, 'HonkTaskDefinition', {
+    const taskDefinition = new ecs.FargateTaskDefinition(this, 'HonkTaskDefinition', {
       cpu: 256,
       memoryLimitMiB: 512,
     });
 
     const container = taskDefinition.addContainer('HonkContainer', {
-      image: ContainerImage.fromAsset('./image'),
+      image: ecs.ContainerImage.fromAsset('./image'),
     });
 
     container.addPortMappings({ containerPort: 8080 });
 
     // Create Security Group to allow traffic to the Service
-    const serviceSecurityGroup = new SecurityGroup(this, 'HonkServiceSecurityGroup', {
+    const serviceSecurityGroup = new ec2.SecurityGroup(this, 'HonkServiceSecurityGroup', {
       vpc: vpc,
       allowAllOutbound: true,
       description: 'Allow traffic to Fargate HTTP API service.',
       securityGroupName: 'HonkServiceSecurityGroup',
     });
 
-    serviceSecurityGroup.addIngressRule(Peer.ipv4(vpc.vpcCidrBlock), Port.tcp(8080));
+    serviceSecurityGroup.addIngressRule(ec2.Peer.ipv4(vpc.vpcCidrBlock), ec2.Port.tcp(8080));
 
     // Create the ECS service and register it to Service Discovery (Cloud Map)
-    const service = new FargateService(this, 'HonkService', {
+    const service = new ecs.FargateService(this, 'HonkService', {
       cluster: cluster,
       capacityProviderStrategies: [
         {
@@ -116,9 +102,9 @@ export class HonkStack extends Stack {
           weight: 0,
         },
       ],
-      vpcSubnets: { subnetType: SubnetType.PRIVATE_ISOLATED },
+      vpcSubnets: { subnetType: ec2.SubnetType.PRIVATE_ISOLATED },
       securityGroups: [serviceSecurityGroup],
-      platformVersion: FargatePlatformVersion.VERSION1_4,
+      platformVersion: ecs.FargatePlatformVersion.VERSION1_4,
       taskDefinition: taskDefinition,
       circuitBreaker: {
         rollback: true,
@@ -128,13 +114,13 @@ export class HonkStack extends Stack {
       cloudMapOptions: {
         name: 'service',
         cloudMapNamespace: dnsNamespace,
-        dnsRecordType: DnsRecordType.SRV,
+        dnsRecordType: servicediscovery.DnsRecordType.SRV,
       },
     });
 
     // Create API Gateway HTTP API and point it to the ECS service via Service Discovery and VPC Link
-    const api = new HttpApi(this, 'HonkAPI', {
-      defaultIntegration: new HttpServiceDiscoveryIntegration(
+    const api = new apigatewayv2.HttpApi(this, 'HonkAPI', {
+      defaultIntegration: new apigatewayv2_integrations.HttpServiceDiscoveryIntegration(
         'HonkServiceDiscoveryIntegration',
         //@ts-ignore
         service.cloudMapService,
@@ -145,13 +131,13 @@ export class HonkStack extends Stack {
     });
 
     // Print out the API endpoint after the deploy
-    new CfnOutput(this, 'Url', {
+    new cdk.CfnOutput(this, 'Url', {
       value: api.url ?? 'Something went wrong',
     });
   }
 }
 
-const app = new App();
+const app = new cdk.App();
 
 new HonkStack(app, 'Honk-dev');
 

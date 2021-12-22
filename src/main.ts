@@ -1,5 +1,6 @@
 import { VpcLink, HttpApi } from '@aws-cdk/aws-apigatewayv2-alpha';
 import { HttpServiceDiscoveryIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
+import { App, Stack, StackProps, CfnOutput } from 'aws-cdk-lib';
 import {
   InterfaceVpcEndpointAwsService,
   Vpc,
@@ -17,7 +18,6 @@ import {
   FargatePlatformVersion,
 } from 'aws-cdk-lib/aws-ecs';
 import { PrivateDnsNamespace, DnsRecordType } from 'aws-cdk-lib/aws-servicediscovery';
-import { App, Stack, StackProps, CfnOutput } from 'aws-cdk-lib/core';
 import { Construct } from 'constructs';
 
 export class HonkStack extends Stack {
@@ -134,11 +134,14 @@ export class HonkStack extends Stack {
 
     // Create API Gateway HTTP API and point it to the ECS service via Service Discovery and VPC Link
     const api = new HttpApi(this, 'HonkAPI', {
-      defaultIntegration: new HttpServiceDiscoveryIntegration({
-        vpcLink: vpcLink,
+      defaultIntegration: new HttpServiceDiscoveryIntegration(
+        'HonkServiceDiscoveryIntegration',
         //@ts-ignore
-        service: service.cloudMapService,
-      }),
+        service.cloudMapService,
+        {
+          vpcLink: vpcLink,
+        },
+      ),
     });
 
     // Print out the API endpoint after the deploy

@@ -388,9 +388,9 @@ ajv@^6.10.0, ajv@^6.12.4:
     uri-js "^4.2.2"
 
 ajv@^8.0.1:
-  version "8.8.2"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-8.8.2.tgz#01b4fef2007a28bf75f0b7fc009f62679de4abbb"
-  integrity sha512-x9VuX+R/jcFj1DHo/fCp99esgGDWiHENrKxaCENuCxpoMCmAt/COCGVDwA7kleEpEzJjDnvh3yGoOuLu0Dtllw==
+  version "8.9.0"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-8.9.0.tgz#738019146638824dea25edcf299dcba1b0e7eb18"
+  integrity sha512-qOKJyNj/h+OWx7s5DePL6Zu1KeM9jPZhwBqs+7DzP6bGOvqzVCSf0xueYmVuaC/oQ/VtS2zLMLHdQFbkka+XDQ==
   dependencies:
     fast-deep-equal "^3.1.1"
     json-schema-traverse "^1.0.0"
@@ -907,9 +907,9 @@ console-control-strings@^1.0.0, console-control-strings@^1.1.0:
   integrity sha1-PXz0Rk22RG6mRL9LOVB/mFEAjo4=
 
 constructs@^10.0.5:
-  version "10.0.34"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.0.34.tgz#8ecf5f11d7d6751dc5f465accca3f1f4f7c3a038"
-  integrity sha512-Q999412/iOwASje+157vjNUmFpBr5ZMw+6RHrgezAM+4C7ITNecv3ICWayWDdN5te5ixUvUWPMmyLJbrZBZ3ag==
+  version "10.0.35"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.0.35.tgz#b9dd14e4f6a07492f50acda57cf9c016d2e70f39"
+  integrity sha512-cSEhC9I6L4S0CNDsheNZAgKufqssmugG1RlkGx7KcN2iykA3C8/EUyeMRVULqwyn0XfKypXd//KK11eaL3yXww==
 
 conventional-changelog-config-spec@^2.1.0:
   version "2.1.0"
@@ -1441,9 +1441,9 @@ eslint-visitor-keys@^2.0.0:
   integrity sha512-0rSmRBzXgDzIsD6mGdJgevzgezI534Cer5L/vyMX0kHzT/jiB43jRhd9YUlMGYLQy2zprNmoT8qasCGtY+QaKw==
 
 eslint-visitor-keys@^3.0.0, eslint-visitor-keys@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.1.0.tgz#eee4acea891814cda67a7d8812d9647dd0179af2"
-  integrity sha512-yWJFpu4DtjsWKkt5GeNBBuZMlNcYVs6vRCLoCVEJrTjaSB6LC98gFipNK/erM2Heg/E8mIK+hXG/pJMLK+eRZA==
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.2.0.tgz#6fbb166a6798ee5991358bc2daa1ba76cc1254a1"
+  integrity sha512-IOzT0X126zn7ALX0dwFiUQEdsfzrm4+ISsQS8nukaJXwEyYKRSnEIIDULYg1mCtGp7UUXgfGl7BIolXREQK+XQ==
 
 eslint@^8:
   version "8.6.0"
@@ -3120,10 +3120,10 @@ progress@^2.0.0, progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.50.31:
-  version "0.50.31"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.50.31.tgz#9d1ecacdbaf8f68b59aba0ceb013f4b9b67d00bf"
-  integrity sha512-+v9AuMFVjoeMB57k0Tu/LneD/OUkTQoFED1SOyPkIXPLKI9C8/Cnk9IoTd6u9RBrum0ULhsty3xb+NkWKWMbVw==
+projen@^0.50.32:
+  version "0.50.32"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.50.32.tgz#b4f88fb620256d4089d037692ffc6cee922d1794"
+  integrity sha512-iHJut5dw4HK5OVYWxIxe2V+eUWpLgxuYW8+iEXqL8atJloQjgeTELaPAHulZi4f1jr6Kw8U98Ozqlq0g3j486g==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"

@@ -578,9 +578,9 @@ aws-cdk@^2.3.0:
     yargs "^16.2.0"
 
 aws-sdk@^2.848.0, aws-sdk@^2.979.0:
-  version "2.1059.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1059.0.tgz#8ce3fa0652ef2836665d0c3566bc56a3d5cfc929"
-  integrity sha512-Q+6T9kpO6aobUNboTOk9MVAmWbs/KK0pxgCNFK0M8YO+7EWUFkNOLHM9tdYOP5vsJK5pLz6D2t2w3lHQjKzGlg==
+  version "2.1060.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1060.0.tgz#3b09be037571e4046d1076138e90e6184148cb81"
+  integrity sha512-c734/CZiVSsuVnEkx/7dodI8ndgOnxiCTwwlEFlMxdAZfLLJplteFwi6c/J2GZQktvz2ysV/HVtNKcJkasYJzw==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -902,9 +902,9 @@ console-control-strings@^1.0.0, console-control-strings@^1.1.0:
   integrity sha1-PXz0Rk22RG6mRL9LOVB/mFEAjo4=
 
 constructs@^10.0.5:
-  version "10.0.38"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.0.38.tgz#482d0390ed4b80d3793279019f984f13e2056c68"
-  integrity sha512-OwaZzyjHyGFE0GG80Z7ZU8Ym0b9G3/y59XZJSb37LVjDTWx1wP8WwkULXTXIvaYCxbJ9NBKN9Hbx14NXqHoIcw==
+  version "10.0.39"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.0.39.tgz#9e0edac67c881eee78e52f718a7018f03aa8a4bb"
+  integrity sha512-Xg0tUqP6Z5nbKmNXhrlHxTdiqkC9mSiYnG/KStquXfDzTmz4jrXXMSCUjo/p94sSySOr+aQ92vSz1ur21JHevw==
 
 conventional-changelog-config-spec@^2.1.0:
   version "2.1.0"
@@ -3105,10 +3105,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.51.4:
-  version "0.51.4"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.51.4.tgz#98108cb561227fe0d1de90136f28ebd464381f86"
-  integrity sha512-WIRhC2zxqMTELq5doC2nKhkU9eEB3Hheb42NhhXOvU9YwgpSFVoZ8zuT1GhgzzKmXY9guNYpL2EF0NQ3FMwXUA==
+projen@^0.51.6:
+  version "0.51.6"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.51.6.tgz#50bbdcde985aa6cba30e3071ff05147388915cdd"
+  integrity sha512-s5wA8OixOWDqwKpePXibt+ggN5vyF9H1+HXAypmqh4SWFHaGG2iwEmfcYDULbcs01SD25wzNTVCz3GOpVGJtqA==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"

@@ -80,9 +80,9 @@
   integrity sha512-82cpyJyKRoQoRi+14ibCeGPu0CwypgtBAdBhq1WfvagpCZNKqwXbKwXllYSMG91DhmG4jt9gN8eP6lGOtozuaw==
 
 "@humanwhocodes/config-array@^0.9.2":
-  version "0.9.2"
-  resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.9.2.tgz#68be55c737023009dfc5fe245d51181bb6476914"
-  integrity sha512-UXOuFCGcwciWckOpmfKDq/GyhlTf9pN/BzG//x8p8zTOFEcGuA68ANXheFS0AGvy3qgZqLBUkMs7hqzqCKOVwA==
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.9.3.tgz#f2564c744b387775b436418491f15fce6601f63e"
+  integrity sha512-3xSMlXHh03hCcCmFc0rbKp3Ivt2PFEJnQUJDDMTJQ2wkECZWdq4GePs2ctc5H8zV+cHPaq8k2vU8mrQjA6iHdQ==
   dependencies:
     "@humanwhocodes/object-schema" "^1.2.1"
     debug "^4.1.1"
@@ -249,9 +249,9 @@
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
 "@types/node@*":
-  version "17.0.12"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.12.tgz#f7aa331b27f08244888c47b7df126184bc2339c5"
-  integrity sha512-4YpbAsnJXWYK/fpTVFlMIcUIho2AYCi4wg5aNPrG1ng7fn/1/RZfCIpRCiBX+12RVa34RluilnvCqD+g3KiSiA==
+  version "17.0.13"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.13.tgz#5ed7ed7c662948335fcad6c412bb42d99ea754e3"
+  integrity sha512-Y86MAxASe25hNzlDbsviXl8jQHb0RDvKt4c40ZJQ1Don0AAL0STLZSs4N+6gLEO55pedy7r2cLwS+ZDxPm/2Bw==
 
 "@types/node@^10.17.60":
   version "10.17.60"
@@ -583,9 +583,9 @@ aws-cdk@^2.3.0:
     yargs "^16.2.0"
 
 aws-sdk@^2.848.0, aws-sdk@^2.979.0:
-  version "2.1064.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1064.0.tgz#69c47dac79e791a557f7ee4816a6eac55951163e"
-  integrity sha512-5Yips4kraereCEOWdjdjnsFHR3yYmrbxQ2+FW5WXsrZ/Xp5C6/u+XYVC3k0zeeUrbqtXaYdVbo028DSVlKg6eg==
+  version "2.1065.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1065.0.tgz#82b6e4e2a6fbccb1767339e309edd4f0daa958e6"
+  integrity sha512-OFvpXoL104dTFKpU14ILcLDPAlDbkJNIKXnnG2pK+2x++CvzIRJeNyERtUuEo7QMUOwq5U4nIQJKSPt5fBC/HA==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -907,9 +907,9 @@ console-control-strings@^1.0.0, console-control-strings@^1.1.0:
   integrity sha1-PXz0Rk22RG6mRL9LOVB/mFEAjo4=
 
 constructs@^10.0.5:
-  version "10.0.46"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.0.46.tgz#0f13d1c2c0b461df9ebeee3d901630b63daff750"
-  integrity sha512-Dxc1TlYRJbdJfQEYwx8vO+ns1EpUpVko4a6UJ6htZ0UvV4YLXkjTY/QMpM+rfUWgPDtXp5xxi+vQZcbFHmUHEw==
+  version "10.0.47"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.0.47.tgz#69f5861d75c87bc0eb94630ff60bc96f976c000f"
+  integrity sha512-TbptGFKQXxOvhzsTpLVzrWosFtptm1/0MyfmO+ICm7U/V00gLdyNtxXi805HhH05wVdApAwWfiAXHAacBLKS0g==
 
 conventional-changelog-config-spec@^2.1.0:
   version "2.1.0"
@@ -1372,9 +1372,9 @@ eslint-import-resolver-typescript@^2.5.0:
     tsconfig-paths "^3.9.0"
 
 eslint-module-utils@^2.7.2:
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/eslint-module-utils/-/eslint-module-utils-2.7.2.tgz#1d0aa455dcf41052339b63cada8ab5fd57577129"
-  integrity sha512-zquepFnWCY2ISMFwD/DqzaM++H+7PDzOpUvotJWm/y1BAFt5R4oeULgdrTejKqLkz7MA/tgstsUMNYc7wNdTrg==
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/eslint-module-utils/-/eslint-module-utils-2.7.3.tgz#ad7e3a10552fdd0642e1e55292781bd6e34876ee"
+  integrity sha512-088JEC7O3lDZM9xGe0RerkOMd0EjFl+Yvd1jPWIkMT5u3H9+HC34mWWPnqPrN13gieT9pBOO+Qt07Nb/6TresQ==
   dependencies:
     debug "^3.2.7"
     find-up "^2.1.0"
@@ -3141,10 +3141,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.52.4:
-  version "0.52.4"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.52.4.tgz#6bf834ed4b4f45ee67cdea1d87a0705f97095b22"
-  integrity sha512-q4ZUNgjFSsyzMaBXOThQ2rXO5pvIR0ZyTp5WpCLUfbhGzPPsDVnJKd1lRpHqhGfAopaQuOYDl2NtysOWTBCwNw==
+projen@^0.52.5:
+  version "0.52.5"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.52.5.tgz#5da6503169ac1d6319aa4309793bf2ff4255598e"
+  integrity sha512-SuaqdVXgdrAi3qRkbbk9rOlqBS/ffrZ8GqACxUlUwDRX+0dgphxcGBN/p5U1Y6c5+aK+5ZLffZLN762BELNbVg==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"

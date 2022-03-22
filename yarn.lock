@@ -2,15 +2,15 @@
 # yarn lockfile v1
 
 
-"@aws-cdk/aws-apigatewayv2-alpha@2.3.0-alpha.0":
-  version "2.3.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-alpha/-/aws-apigatewayv2-alpha-2.3.0-alpha.0.tgz#348df768d53cfdde86fe59da0427f5d87519e8e2"
-  integrity sha512-SSbpbtf9g8TjAMAypdxz9xFoYGZvTq1DvLzF+Z7Tycy6R3tykux0vA+y0EHC8IEYnaysqyyahLhyEteD44NT0w==
+"@aws-cdk/aws-apigatewayv2-alpha@2.17.0-alpha.0":
+  version "2.17.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-alpha/-/aws-apigatewayv2-alpha-2.17.0-alpha.0.tgz#327a5c40a27d2907f8425627be9df8e318f1de54"
+  integrity sha512-skOShUEi+npxbg+lgGRWsjts/z0AttGxWKIylIlgVoLsWB8dLsHJaiUefCByu87Gpe5w2HOMj4shrai2nKLwOA==
 
-"@aws-cdk/aws-apigatewayv2-integrations-alpha@2.3.0-alpha.0":
-  version "2.3.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-integrations-alpha/-/aws-apigatewayv2-integrations-alpha-2.3.0-alpha.0.tgz#5deecc2961535d742404781fc9a83e882a308824"
-  integrity sha512-5bk7930g7Nc9LKU7fa/mOoGi6eB4XqSw75Y3mTkVh7Ufj0CUvjte+LqGiqyAZ+O1K6qbyAyCQh0GQNUW4LTROA==
+"@aws-cdk/aws-apigatewayv2-integrations-alpha@2.17.0-alpha.0":
+  version "2.17.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-integrations-alpha/-/aws-apigatewayv2-integrations-alpha-2.17.0-alpha.0.tgz#e602eed9e76c1f9981cb32d2284ee0a30c02e715"
+  integrity sha512-KicMeXovJcxWr6+wAB7u/9Ti5AMKFz2hljeJY8FiHFEy6w+vCRhQ0EVuJWxBfRdVmJoNK0AmBU4/Y+4drxnZVg==
 
 "@balena/dockerignore@^1.0.2":
   version "1.0.2"
@@ -412,7 +412,7 @@ at-least-node@^1.0.0:
   resolved "https://registry.yarnpkg.com/at-least-node/-/at-least-node-1.0.0.tgz#602cd4b46e844ad4effc92a8011a3c46e0238dc2"
   integrity sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==
 
-aws-cdk-lib@^2.3.0:
+aws-cdk-lib@^2.17.0:
   version "2.17.0"
   resolved "https://registry.yarnpkg.com/aws-cdk-lib/-/aws-cdk-lib-2.17.0.tgz#822b397fbc1a44f647abbdb31d6a85f18bd89043"
   integrity sha512-bga2HptbGx3rMdSkIKxBS13miogj/DHB2VPfQZAoKoCOAanOot+M3mHhYqe5aNdxhrppaRjG2eid2p1/MvRnvg==
@@ -427,7 +427,7 @@ aws-cdk-lib@^2.3.0:
     semver "^7.3.5"
     yaml "1.10.2"
 
-aws-cdk@^2.3.0:
+aws-cdk@^2.17.0:
   version "2.17.0"
   resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.17.0.tgz#cb9149c55f1bec54eacfe0242d3454faf4292e2e"
   integrity sha512-gRPPpTONOjtQ40A8sc2SzXPGDzFlVbSPPts1pjOx4VBJ2S91A0ON3Fkby+XX/Xqdo1GITTWAk5Va4PnoYyUhmA==
@@ -1994,9 +1994,9 @@ minimatch@^5.0.1:
     brace-expansion "^2.0.1"
 
 minimist@^1.2.0, minimist@^1.2.3:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
-  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
+  integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
 minipass-collect@^1.0.2:
   version "1.0.2"

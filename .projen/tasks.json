@@ -177,6 +177,9 @@
       },
       "steps": [
         {
+          "exec": "yarn upgrade npm-check-updates"
+        },
+        {
           "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='@aws-cdk/aws-apigatewayv2-alpha,@aws-cdk/aws-apigatewayv2-integrations-alpha'"
         },
         {

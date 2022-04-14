@@ -654,9 +654,9 @@ console-control-strings@^1.1.0:
   integrity sha1-PXz0Rk22RG6mRL9LOVB/mFEAjo4=
 
 constructs@^10.0.5:
-  version "10.0.113"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.0.113.tgz#1418b70d9f59b9a694d7cfa3c6afd1109a1b5dbe"
-  integrity sha512-Q2UNZz2nGiW2ZDZz7+FLOKQNyGr0LXc6mjuAvxXJ57UMwLabbhva8lKWMv3fztdsqlVbtl1DGq1vw2htbaNNJw==
+  version "10.0.114"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.0.114.tgz#ddbad928e44ff6fed89422eb9efcbd6921849625"
+  integrity sha512-er6NTso71PfZ+D9EfwtZmWJpTkDWUlKYkFHAlpT+DJ8Z7gUshEe8m4pq9PSYmKnKCKj3gta/Cq17W6a4hkg+Kw==
 
 conventional-changelog-config-spec@^2.1.0:
   version "2.1.0"
@@ -2217,9 +2217,9 @@ npm-pick-manifest@^7.0.0:
     semver "^7.3.5"
 
 npm-registry-fetch@^13.0.1:
-  version "13.1.0"
-  resolved "https://registry.yarnpkg.com/npm-registry-fetch/-/npm-registry-fetch-13.1.0.tgz#71bed52e30a4b27441604bbba79c7db8e0e34cb5"
-  integrity sha512-TIYL5X8CcwDhbFMXFDShNcpG6OMCYK6VzvSr6MUWP20tCU2DJ4ao2qQg3DT+3Pet8mO6/cgbZpon4LMh3duYLg==
+  version "13.1.1"
+  resolved "https://registry.yarnpkg.com/npm-registry-fetch/-/npm-registry-fetch-13.1.1.tgz#26dc4b26d0a545886e807748032ba2aefaaae96b"
+  integrity sha512-5p8rwe6wQPLJ8dMqeTnA57Dp9Ox6GH9H60xkyJup07FmVlu3Mk7pf/kIIpl9gaN5bM8NM+UUx3emUWvDNTt39w==
   dependencies:
     make-fetch-happen "^10.0.6"
     minipass "^3.1.6"
@@ -2467,10 +2467,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.54.24:
-  version "0.54.24"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.54.24.tgz#ecb78f648cf5a2c5289531bb1236fe43fc3ba93e"
-  integrity sha512-rIfNahQgPgXpUC7qc+MaHYehPxnik+2fnsREgfDvTRkB4QAx4Fh5GaM/VsI8Pw04J6HdGpeZfxBJxHwdCcw2Kw==
+projen@^0.54.25:
+  version "0.54.25"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.54.25.tgz#2ad3c3e799dc6b6778c83527fb565d5f17fbf4fd"
+  integrity sha512-7C4dqt50IGyNrtN0Am4oPe6JUOlooVKmdA4iZA2zj5ruMmT3fGJ28wpbnPGr8BiXt2UOQIVndSbsbiLWFPldyQ==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"

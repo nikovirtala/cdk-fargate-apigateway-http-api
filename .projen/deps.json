@@ -17,7 +17,7 @@
     },
     {
       "name": "aws-cdk",
-      "version": "^2.17.0",
+      "version": "^2.90.0",
       "type": "build"
     },
     {
@@ -72,17 +72,17 @@
     },
     {
       "name": "@aws-cdk/aws-apigatewayv2-alpha",
-      "version": "2.17.0-alpha.0",
+      "version": "2.90.0-alpha.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-apigatewayv2-integrations-alpha",
-      "version": "2.17.0-alpha.0",
+      "version": "2.90.0-alpha.0",
       "type": "runtime"
     },
     {
       "name": "aws-cdk-lib",
-      "version": "^2.17.0",
+      "version": "^2.90.0",
       "type": "runtime"
     },
     {

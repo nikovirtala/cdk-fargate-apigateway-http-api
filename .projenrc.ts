@@ -1,6 +1,6 @@
-const { awscdk } = require('projen');
+import { awscdk } from 'projen'
 
-const cdkVersion = '2.90.0';
+const cdkVersion = '2.158.0';
 
 const project = new awscdk.AwsCdkTypeScriptApp({
   cdkVersion: cdkVersion,
@@ -14,16 +14,10 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   buildWorkflow: true,
   codeCov: false,
   defaultReleaseBranch: 'main',
-  deps: [
-    `@aws-cdk/aws-apigatewayv2-alpha@${cdkVersion}-alpha.0`,
-    `@aws-cdk/aws-apigatewayv2-integrations-alpha@${cdkVersion}-alpha.0`,
-  ],
   dependabot: false,
   depsUpgradeOptions: {
-    ignoreProjen: false,
     workflowOptions: {
       labels: ['auto-approve', 'auto-merge'],
-      secret: 'AUTOMATION_TOKEN',
     },
   },
   autoApproveOptions: {
@@ -31,12 +25,12 @@ const project = new awscdk.AwsCdkTypeScriptApp({
     allowedUsernames: ['nikovirtala'],
   },
   eslint: true,
-  eslintOptions: {
-    prettier: true,
-  },
+  prettier: true,
   jest: false,
   mergify: true,
   pullRequestTemplate: false,
+  typescriptVersion: '5.5.4',
+  projenrcTs: true,
 });
 
 project.synth();

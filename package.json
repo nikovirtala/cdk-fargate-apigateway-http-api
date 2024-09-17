@@ -40,7 +40,7 @@
     "eslint-plugin-import": "^2.30.0",
     "eslint-plugin-prettier": "^5.2.1",
     "prettier": "^3.3.3",
-    "projen": "^0.87.2",
+    "projen": "^0.87.3",
     "ts-node": "^9",
     "typescript": "5.5.4"
   },

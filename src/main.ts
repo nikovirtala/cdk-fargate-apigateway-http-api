@@ -1,25 +1,30 @@
-import * as cdk from "aws-cdk-lib";
-import * as apigatewayv2 from "aws-cdk-lib/aws-apigatewayv2";
-import * as apigatewayv2_integrations from "aws-cdk-lib/aws-apigatewayv2-integrations";
-import * as ec2 from "aws-cdk-lib/aws-ec2";
-import * as ecs from "aws-cdk-lib/aws-ecs";
-import * as servicediscovery from "aws-cdk-lib/aws-servicediscovery";
+import {
+  App,
+  aws_apigatewayv2,
+  aws_apigatewayv2_integrations,
+  aws_ec2,
+  aws_ecs,
+  aws_servicediscovery,
+  CfnOutput,
+  Stack,
+  StackProps,
+} from "aws-cdk-lib";
 import { Construct } from "constructs";
 
-export class HonkStack extends cdk.Stack {
-  constructor(scope: Construct, id: string, props: cdk.StackProps = {}) {
+export class HonkStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     // Create VPC with isolated (no routing to internet) subnets
-    const vpc = new ec2.Vpc(this, "HonkVpc", {
-      ipAddresses: ec2.IpAddresses.cidr("10.0.0.0/16"),
+    const vpc = new aws_ec2.Vpc(this, "HonkVpc", {
+      ipAddresses: aws_ec2.IpAddresses.cidr("10.0.0.0/16"),
       enableDnsSupport: true,
       maxAzs: 1,
       subnetConfiguration: [
         {
           cidrMask: 24,
           name: "isolated",
-          subnetType: ec2.SubnetType.PRIVATE_ISOLATED,
+          subnetType: aws_ec2.SubnetType.PRIVATE_ISOLATED,
         },
       ],
     });
@@ -28,41 +33,41 @@ export class HonkStack extends cdk.Stack {
 
     // ECR images are stored in s3, and thus s3 is needed
     vpc.addGatewayEndpoint("S3Endpoint", {
-      service: ec2.GatewayVpcEndpointAwsService.S3,
+      service: aws_ec2.GatewayVpcEndpointAwsService.S3,
     });
 
     vpc.addInterfaceEndpoint("EcrEndpoint", {
-      service: ec2.InterfaceVpcEndpointAwsService.ECR,
+      service: aws_ec2.InterfaceVpcEndpointAwsService.ECR,
       privateDnsEnabled: true,
       open: true,
     });
 
     vpc.addInterfaceEndpoint("EcrDockerEndpoint", {
-      service: ec2.InterfaceVpcEndpointAwsService.ECR_DOCKER,
+      service: aws_ec2.InterfaceVpcEndpointAwsService.ECR_DOCKER,
       privateDnsEnabled: true,
       open: true,
     });
 
     vpc.addInterfaceEndpoint("LogsEndpoint", {
-      service: ec2.InterfaceVpcEndpointAwsService.CLOUDWATCH_LOGS,
+      service: aws_ec2.InterfaceVpcEndpointAwsService.CLOUDWATCH_LOGS,
       privateDnsEnabled: true,
       open: true,
     });
 
     vpc.addInterfaceEndpoint("ApiGatewayEndpoint", {
-      service: ec2.InterfaceVpcEndpointAwsService.APIGATEWAY,
+      service: aws_ec2.InterfaceVpcEndpointAwsService.APIGATEWAY,
       privateDnsEnabled: true,
       open: true,
     });
 
     // Create API Gateway VPC Link to get the service connected to VPC
-    const vpcLink = new apigatewayv2.VpcLink(this, "HonkVpcLink", {
+    const vpcLink = new aws_apigatewayv2.VpcLink(this, "HonkVpcLink", {
       vpc: vpc,
-      subnets: { subnetType: ec2.SubnetType.PRIVATE_ISOLATED },
+      subnets: { subnetType: aws_ec2.SubnetType.PRIVATE_ISOLATED },
     });
 
     // Create Service Discovery (Cloud Map) namespace
-    const dnsNamespace = new servicediscovery.PrivateDnsNamespace(
+    const dnsNamespace = new aws_servicediscovery.PrivateDnsNamespace(
       this,
       "HonkDnsNamespace",
       {
@@ -72,13 +77,13 @@ export class HonkStack extends cdk.Stack {
     );
 
     // Create ECS cluster
-    const cluster = new ecs.Cluster(this, "HonkCluster", {
+    const cluster = new aws_ecs.Cluster(this, "HonkCluster", {
       vpc: vpc,
       enableFargateCapacityProviders: true,
     });
 
     // Declare the ECS Task; one small container, built locally
-    const taskDefinition = new ecs.FargateTaskDefinition(
+    const taskDefinition = new aws_ecs.FargateTaskDefinition(
       this,
       "HonkTaskDefinition",
       {
@@ -88,13 +93,13 @@ export class HonkStack extends cdk.Stack {
     );
 
     const container = taskDefinition.addContainer("HonkContainer", {
-      image: ecs.ContainerImage.fromAsset("./image"),
+      image: aws_ecs.ContainerImage.fromAsset("./image"),
     });
 
     container.addPortMappings({ containerPort: 8080 });
 
     // Create Security Group to allow traffic to the Service
-    const serviceSecurityGroup = new ec2.SecurityGroup(
+    const serviceSecurityGroup = new aws_ec2.SecurityGroup(
       this,
       "HonkServiceSecurityGroup",
       {
@@ -106,12 +111,12 @@ export class HonkStack extends cdk.Stack {
     );
 
     serviceSecurityGroup.addIngressRule(
-      ec2.Peer.ipv4(vpc.vpcCidrBlock),
-      ec2.Port.tcp(8080),
+      aws_ec2.Peer.ipv4(vpc.vpcCidrBlock),
+      aws_ec2.Port.tcp(8080),
     );
 
     // Create the ECS service and register it to Service Discovery (Cloud Map)
-    const service = new ecs.FargateService(this, "HonkService", {
+    const service = new aws_ecs.FargateService(this, "HonkService", {
       cluster: cluster,
       capacityProviderStrategies: [
         {
@@ -123,9 +128,9 @@ export class HonkStack extends cdk.Stack {
           weight: 0,
         },
       ],
-      vpcSubnets: { subnetType: ec2.SubnetType.PRIVATE_ISOLATED },
+      vpcSubnets: { subnetType: aws_ec2.SubnetType.PRIVATE_ISOLATED },
       securityGroups: [serviceSecurityGroup],
-      platformVersion: ecs.FargatePlatformVersion.VERSION1_4,
+      platformVersion: aws_ecs.FargatePlatformVersion.VERSION1_4,
       taskDefinition: taskDefinition,
       circuitBreaker: {
         rollback: true,
@@ -135,14 +140,14 @@ export class HonkStack extends cdk.Stack {
       cloudMapOptions: {
         name: "service",
         cloudMapNamespace: dnsNamespace,
-        dnsRecordType: servicediscovery.DnsRecordType.SRV,
+        dnsRecordType: aws_servicediscovery.DnsRecordType.SRV,
       },
     });
 
     // Create API Gateway HTTP API and point it to the ECS service via Service Discovery and VPC Link
-    const api = new apigatewayv2.HttpApi(this, "HonkAPI", {
+    const api = new aws_apigatewayv2.HttpApi(this, "HonkAPI", {
       defaultIntegration:
-        new apigatewayv2_integrations.HttpServiceDiscoveryIntegration(
+        new aws_apigatewayv2_integrations.HttpServiceDiscoveryIntegration(
           "HonkServiceDiscoveryIntegration",
           //@ts-ignore
           service.cloudMapService,
@@ -153,13 +158,13 @@ export class HonkStack extends cdk.Stack {
     });
 
     // Print out the API endpoint after the deploy
-    new cdk.CfnOutput(this, "Url", {
+    new CfnOutput(this, "Url", {
       value: api.url ?? "Something went wrong",
     });
   }
 }
 
-const app = new cdk.App();
+const app = new App();
 
 new HonkStack(app, "Honk-dev");
 

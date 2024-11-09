@@ -1,6 +1,6 @@
 import { awscdk } from "projen";
 
-const cdkVersion = "2.158.0";
+const cdkVersion = "2.166.0";
 
 const project = new awscdk.AwsCdkTypeScriptApp({
   cdkVersion: cdkVersion,

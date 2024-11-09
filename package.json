@@ -32,7 +32,7 @@
     "@types/node": "ts5.5",
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
-    "aws-cdk": "^2.158.0",
+    "aws-cdk": "^2.166.0",
     "esbuild": "^0.24.0",
     "eslint": "^9",
     "eslint-config-prettier": "^9.1.0",
@@ -45,7 +45,7 @@
     "typescript": "5.5.4"
   },
   "dependencies": {
-    "aws-cdk-lib": "^2.158.0",
+    "aws-cdk-lib": "^2.166.0",
     "constructs": "^10.0.5"
   },
   "license": "MIT",

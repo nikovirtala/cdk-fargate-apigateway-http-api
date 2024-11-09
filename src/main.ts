@@ -12,7 +12,7 @@ export class HonkStack extends cdk.Stack {
 
     // Create VPC with isolated (no routing to internet) subnets
     const vpc = new ec2.Vpc(this, "HonkVpc", {
-      cidr: "10.0.0.0/16",
+      ipAddresses: ec2.IpAddresses.cidr("10.0.0.0/16"),
       enableDnsSupport: true,
       maxAzs: 1,
       subnetConfiguration: [

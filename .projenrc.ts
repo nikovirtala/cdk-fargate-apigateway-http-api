@@ -8,7 +8,7 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   context: { "@aws-cdk/core:newStyleStackSynthesis": true },
   authorEmail: "niko.virtala@hey.com",
   authorName: "Niko Virtala",
-  authorUrl: "https://cloudgardener.dev/",
+  authorUrl: "https://nikovirtala.dev/",
   license: "MIT",
   licensed: true,
   buildWorkflow: true,

@@ -29,7 +29,7 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   jest: false,
   mergify: true,
   pullRequestTemplate: false,
-  typescriptVersion: "5.5.4",
+  typescriptVersion: "5.6.3",
   projenrcTs: true,
 });
 

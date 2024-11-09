@@ -29,7 +29,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@types/node": "ts5.5",
+    "@types/node": "ts5.6",
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
     "aws-cdk": "^2.166.0",
@@ -42,7 +42,7 @@
     "prettier": "^3.3.3",
     "projen": "^0.90.1",
     "ts-node": "^9",
-    "typescript": "5.5.4"
+    "typescript": "5.6.3"
   },
   "dependencies": {
     "aws-cdk-lib": "^2.166.0",

@@ -38,7 +38,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^2.7.1",
     "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-prettier": "^5.3.1",
+    "eslint-plugin-prettier": "^5.4.0",
     "prettier": "^3.5.3",
     "projen": "^0.91.29",
     "ts-node": "^9",

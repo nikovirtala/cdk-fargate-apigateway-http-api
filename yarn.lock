@@ -332,9 +332,9 @@
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
 "@types/node@ts5.6":
-  version "24.0.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.0.3.tgz#f935910f3eece3a3a2f8be86b96ba833dc286cab"
-  integrity sha512-R4I/kzCYAdRLzfiCabn9hxWfbuHS573x+r0dJMkkzThEa7pbrcDWK+9zu3e7aBOouf+rQAciqPFMnxwr0aWgKg==
+  version "24.0.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.0.4.tgz#dbae889912bda33a7f57669fb8587c1a56bc0c1f"
+  integrity sha512-ulyqAkrhnuNq9pB76DRBTkcS6YsmDALy6Ua63V8OhrOBgbcYt6IOdzpw5P1+dyRIyMerzLkeYWBeOXPpA9GMAA==
   dependencies:
     undici-types "~7.8.0"
 
@@ -2065,10 +2065,10 @@ prettier@^3.6.0:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.6.0.tgz#18ec98d62cb0757a5d4eab40253ff3e6d0fc8dea"
   integrity sha512-ujSB9uXHJKzM/2GBuE0hBOUgC77CN3Bnpqa+g80bkv3T3A93wL/xlzDATHhnhkzifz/UE2SNOvmbTz5hSkDlHw==
 
-projen@^0.93.2:
-  version "0.93.2"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.93.2.tgz#092e387bdd14813af1ad88f2a0e774bc388b86a2"
-  integrity sha512-QqB115AjoE1W9A4ZUdCHzaKE6/e91nMvl4OUIYCPVtSyhenNs6pR0qYM6y11sh6uaVZKw3Zz0BhXF/aO7kv7AQ==
+projen@^0.94.0:
+  version "0.94.0"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.94.0.tgz#6d2c7bc3eeb9314e83be79a626a514314259c39e"
+  integrity sha512-ttlEalyI5pVMgXEtNBvqmDrrE2nA7uIxRyJmGchK8z503AOYHcRk/MKDvQiLicHMQydA4LubAShrK/PCE18hEw==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"

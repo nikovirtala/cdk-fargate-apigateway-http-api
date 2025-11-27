@@ -580,9 +580,9 @@ available-typed-arrays@^1.0.7:
     possible-typed-array-names "^1.0.0"
 
 aws-cdk-lib@^2.166.0:
-  version "2.229.1"
-  resolved "https://registry.yarnpkg.com/aws-cdk-lib/-/aws-cdk-lib-2.229.1.tgz#c83864f130ac3eb3c117e38b30b362788f93e527"
-  integrity sha512-G+evkEWB5uR7ZeIRnDr3XEARK8ACics4bsut15FNe0vLWogWwKc9gSXtZrI1Z5XWlf3zp6kbZlPOE3FJ23D1Ng==
+  version "2.230.0"
+  resolved "https://registry.yarnpkg.com/aws-cdk-lib/-/aws-cdk-lib-2.230.0.tgz#551a35de9e72ad9625484099f9d341b53930e894"
+  integrity sha512-hA1cWZAHpvrwJE55N77Km/aPUgN9NfbGm98vi91OeLKFgMVhdCXM57lJUAYTq0e8JHWFRWmsVlm9R8pq5jTJeA==
   dependencies:
     "@aws-cdk/asset-awscli-v1" "2.2.242"
     "@aws-cdk/asset-node-proxy-agent-v6" "^2.1.0"
@@ -2076,10 +2076,10 @@ prettier@^3.6.2:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.6.2.tgz#ccda02a1003ebbb2bfda6f83a074978f608b9393"
   integrity sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==
 
-projen@^0.98.25:
-  version "0.98.25"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.98.25.tgz#ea9a84116f9127d11c68d4a71047d99df3ecf2d4"
-  integrity sha512-LWcraC/QZ1vgVQ5WrySOtevz9BNmTxKf7iey/UkGKYUBZlhQk4mojWQHHlIpaSmLZ12ZUwGnPdjXjd7jv1TYIw==
+projen@^0.98.26:
+  version "0.98.26"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.98.26.tgz#117c1fff019a4bb7e792382c81748a2f8208507a"
+  integrity sha512-M92WwmFwr134VpFDVwGDdpB/pcTDKs7lwbgD5fYQn/F/T4QOSaFcCbHmp/nhw0oendGb8a9p9m/zIbalVbim4w==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"

@@ -21,9 +21,9 @@
     semver "^7.7.4"
 
 "@aws-cdk/cloud-assembly-schema@^53.0.0":
-  version "53.10.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/cloud-assembly-schema/-/cloud-assembly-schema-53.10.0.tgz#46456af181961fa9fba99d7d685c908f8dd770a6"
-  integrity sha512-/gJgJQh9SHIIN82GZ4BB0WS3z3HcKFF734yNOkX0stBeyIfaBl2x476dihVCCM1GpVqnueC9DUA3CyZJOOPitg==
+  version "53.11.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/cloud-assembly-schema/-/cloud-assembly-schema-53.11.0.tgz#c1d44c0e834d94e7d6415d66962e96b0a81870f6"
+  integrity sha512-sAkcWQz2hvblIDHe5pFXxyIPZuhDaYowGIpASK+LSDvknBpP7+y3fib/FMpSPQdyI6ZOmJPEQOnz553H7mPnBA==
   dependencies:
     jsonschema "~1.4.1"
     semver "^7.7.4"
@@ -580,9 +580,9 @@ available-typed-arrays@^1.0.7:
     possible-typed-array-names "^1.0.0"
 
 aws-cdk-lib@^2.166.0:
-  version "2.245.0"
-  resolved "https://registry.yarnpkg.com/aws-cdk-lib/-/aws-cdk-lib-2.245.0.tgz#bae813164c85d557f856b195aadbd226714048f5"
-  integrity sha512-Yfeb+wKC6s+Ttm/N93C6vY6ksyCh68WaG/j3N6dalJWTW/V4o6hUolHm+v2c2IofJEUS45c5AF/EEj24e9hfMA==
+  version "2.246.0"
+  resolved "https://registry.yarnpkg.com/aws-cdk-lib/-/aws-cdk-lib-2.246.0.tgz#77cbcdd367e3ed96b42fec9e89a6fd498b04ff93"
+  integrity sha512-7OtF95mss9dWohopCNQKAlNFrMJwgOIvNTNgoOWWcKhULBf6UxKCaf6ATlnuysIWRGf2DHgcval/4+yySOKRBw==
   dependencies:
     "@aws-cdk/asset-awscli-v1" "2.2.263"
     "@aws-cdk/asset-node-proxy-agent-v6" "^2.1.1"
@@ -601,9 +601,9 @@ aws-cdk-lib@^2.166.0:
     yaml "1.10.3"
 
 aws-cdk@^2:
-  version "2.1115.0"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.1115.0.tgz#67d86387ae1d2b442c77e9626ab3cdd08f925552"
-  integrity sha512-PpNNflDt1L2TxpMh2h7cPHnFkDVeY1hwIxuGuvswS08mA0syOT4OmZx8hZYdcLru6NceCsn0x/7uTHpb6Hzo5A==
+  version "2.1115.1"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.1115.1.tgz#b5013516628770cfb40705411ca3a2ff363f952c"
+  integrity sha512-6vvSuHTq5FKClXIIXXvbmdYkzG+I6Ij80iXyg3Oky3+FZn+lYgYlM3RCS9gLWyJLhgcOhwB8jQpy6593OlbQcw==
 
 balanced-match@^1.0.0:
   version "1.0.2"

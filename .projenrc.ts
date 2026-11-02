@@ -1,8 +1,8 @@
-import { awscdk } from "projen";
+import { AwsCdkTypeScriptAppProject } from "@nikovirtala/projen-constructs";
 
 const cdkVersion = "2.166.0";
 
-const project = new awscdk.AwsCdkTypeScriptApp({
+const project = new AwsCdkTypeScriptAppProject({
   cdkVersion: cdkVersion,
   name: "cdk-fargate-apigateway-http-api",
   context: { "@aws-cdk/core:newStyleStackSynthesis": true },
@@ -11,26 +11,9 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   authorUrl: "https://nikovirtala.dev/",
   license: "MIT",
   licensed: true,
-  buildWorkflow: true,
-  codeCov: false,
   defaultReleaseBranch: "main",
-  dependabot: false,
-  depsUpgradeOptions: {
-    workflowOptions: {
-      labels: ["auto-approve", "auto-merge"],
-    },
-  },
-  autoApproveOptions: {
-    secret: "GITHUB_TOKEN",
-    allowedUsernames: ["nikovirtala"],
-  },
-  eslint: true,
-  prettier: true,
-  jest: false,
-  mergify: true,
+  devDeps: ["@nikovirtala/projen-constructs"],
   pullRequestTemplate: false,
-  typescriptVersion: "5.6.3",
-  projenrcTs: true,
 });
 
 project.synth();
